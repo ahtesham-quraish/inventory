@@ -1,6 +1,8 @@
 {
   "name": "inventory",
   "version": "0.1.0",
+  "author": "OnePgr, Inc <amsystango@gmail.com>",
+  "email" : "ahtesham.quraish@gmail.com",
   "private": true,
   "main": "public/electron.js",
   "homepage": "./",
@@ -27,14 +29,27 @@
     "eject": "react-scripts eject",
     "electron-build": "electron-builder",
     "release": "yarn react-build && electron-builder --publish=always",
-    "build": "yarn react-build && yarn electron-build",
+    "build": "yarn react-build && yarn electron-build ",
     "build-electron" : " yarn electron-build",
     "start": "concurrently \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\""
   },
   "build": {
     "appId": "com.example.electron-cra",
-      "icon": "build/react-256.png",
-    
+      "productName": "ITech",
+      "icon":"build/icons",
+      "linux": {
+        "icon":"build/icons",
+        "category":"office",
+        "target": [
+          "AppImage",
+          "deb"
+        ],
+        "maintainer": "...",
+        "desktop": {
+          "Encoding": "UTF-8"
+        },
+        "description" : "An inventory systom for bearing, oil and Greece"
+      },
     "files": [
       "build/**/*",
       "node_modules/**/*"
