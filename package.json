@@ -5,12 +5,16 @@
   "main": "public/electron.js",
   "homepage": "./",
   "dependencies": {
+    "axios": "^0.18.0",
     "cross-env": "5.1.6",
     "electron-is-dev": "^1.1.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-loader-spinner": "^2.3.0",
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.0",
+    "react-toastify": "^5.1.0",
+    "react-toasts": "^3.0.3",
     "update-electron-app": "^1.2.0"
   },
   "devDependencies": {
@@ -28,13 +32,12 @@
     "electron-build": "electron-builder",
     "release": "yarn react-build && electron-builder --publish=always",
     "build": "yarn react-build && yarn electron-build",
-    "build-electron" : " yarn electron-build",
+    "build-electron": " yarn electron-build",
     "start": "concurrently \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\""
   },
   "build": {
     "appId": "com.example.electron-cra",
-      "icon": "build/react-256.png",
-    
+    "icon": "build/react-256.png",
     "files": [
       "build/**/*",
       "node_modules/**/*"

@@ -11,6 +11,7 @@ ReactDOM.render(<Router>
     <Route path='/tester' component={Test}/>
     <Route path='/' component={App}/>
     
+    
         </Switch>
     </Router>, document.getElementById('root'));
 

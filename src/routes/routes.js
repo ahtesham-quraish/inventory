@@ -7,7 +7,7 @@ export const siderBarRoutes = [
         "route":"/dashbaord",
     },
     {
-        "name":"Test",
-        "route":"/test",
+        "name":"Add Product",
+        "route":"/addProduct",
     }
 ]
