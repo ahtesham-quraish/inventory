@@ -73,16 +73,17 @@ class AddProduct extends React.Component{
 		}
 		let options = {'Content-Type': 'application/json'}
 		
-		axios.post("http://127.0.0.1:8000/product/",payload,options)
+		fetch("http://127.0.0.1:8000/product/",{
+			method:"post",
+			headers:options,
+			body:JSON.stringify(payload)
+		})
 		
 		.then(response=>{
-			if(response.ok){
+			
 				return response.json()
-			}
-			else{
-				throw 500
-				
-			}
+			
+			
 		})
 		.then(json=>{
 			toast.success("Product added successfully!")
