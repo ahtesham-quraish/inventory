@@ -2,7 +2,7 @@
   "name": "inventory",
   "version": "0.1.0",
   "author": "OnePgr, Inc <amsystango@gmail.com>",
-  "email" : "ahtesham.quraish@gmail.com",
+  "email": "ahtesham.quraish@gmail.com",
   "private": true,
   "main": "public/electron.js",
   "homepage": "./",
@@ -13,10 +13,14 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-loader-spinner": "^2.3.0",
+    "react-redux": "^7.0.3",
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.0",
     "react-toastify": "^5.1.0",
     "react-toasts": "^3.0.3",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
+    "simple-react-validator": "^1.0.7",
     "update-electron-app": "^1.2.0"
   },
   "devDependencies": {
@@ -34,13 +38,13 @@
     "electron-build": "electron-builder",
     "release": "yarn react-build && electron-builder --publish=always",
     "build": "yarn react-build && yarn electron-build ",
-    "build-electron" : " yarn electron-build",
+    "build-electron": " yarn electron-build",
     "start": "concurrently \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\""
   },
   "build": {
     "appId": "org.develar.onshape",
     "productName": "ITech",
-    "icon":"build/icons",
+    "icon": "build/icons",
     "files": [
       "build/**/*",
       "node_modules/**/*"
@@ -72,40 +76,36 @@
   },
   "build-win": {
     "appId": "com.example.electron-cra",
-      "productName": "ITech",
-      "icon":"build/icons",
-        "target": [
-          "nsis-web"
-        ],
-        
-      
+    "productName": "ITech",
+    "icon": "build/icons",
+    "target": [
+      "nsis-web"
+    ],
     "files": [
       "build/**/*",
       "node_modules/**/*"
-    ], 
+    ],
     "directories": {
       "buildResources": "assets"
     }
   },
   "build-linux": {
     "appId": "com.example.electron-cra",
-
-      "productName": "ITech",
-      "icon":"build/icons",
-      "linux": {
-        "icon":"build/icons",
-        "category":"office",
-        "target": [
-          "AppImage",
-          "deb"
-        ],
-        "maintainer": "...",
-        "desktop": {
-          "Encoding": "UTF-8"
-        },
-        "description" : "An inventory systom for bearing, oil and Greece"
+    "productName": "ITech",
+    "icon": "build/icons",
+    "linux": {
+      "icon": "build/icons",
+      "category": "office",
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "maintainer": "...",
+      "desktop": {
+        "Encoding": "UTF-8"
       },
-
+      "description": "An inventory systom for bearing, oil and Greece"
+    },
     "files": [
       "build/**/*",
       "node_modules/**/*"

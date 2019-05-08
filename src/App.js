@@ -1,24 +1,34 @@
 import React from 'react';
-import Header from './components/header'
-import SideBar from './components/sidebar'
-import Dashboard from './components/dashboard'
-import AddProduct from './components/products/addProduct'
-import {Switch,Route,BrowserRouter as Router} from 'react-router-dom'
+import Header from './components/header';
+import SideBar from './components/sidebar';
+import Dashboard from './components/dashboard';
+import AddProduct from './components/products/addProduct';
+import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-function App() {
+function App(props) {
+  console.log(props);
   return (
     <React.Fragment>
-        
-        <Router>
+      <Router>
         <Header />
         <SideBar />
         <Switch>
-        <Route path='/dashboard' component={Dashboard}/>
-        <Route path='/addProduct' component={AddProduct}/>
-          </Switch>
-          </Router>
-      </React.Fragment>
+          <Route path="/dashboard" component={Dashboard} />
+          <Route path="/addProduct" component={AddProduct} />
+        </Switch>
+      </Router>
+    </React.Fragment>
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    product: state,
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  null,
+)(App);
